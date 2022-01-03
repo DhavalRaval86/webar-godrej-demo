@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>3D Model Viewer</title>
+        
+        <!-- Aframe -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.2.0/aframe.min.js"></script>
+        
+        <!-- Aframe Extras -->
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+        <script src="scripts/hide-on-enter-ar.js"></script>
+        <script src="scripts/ar-shadows.js"></script>
+        <script src="scripts/model-viewer.js"></script>
+        <script src="scripts/background-gradient.js"></script>
+
+    </head>
+
+    <body>
+        <a-scene rerenderer="colorManagement: true;"
+            info-message="htmlSrc: #messageText"
+            model-viewer="gltfModel: #t-rex; title: ">
+
+            <!-- Asset Management System -->
+            <a-assets>
+
+                <!-- Shadow -->
+                <img id="shadow" src="images/shadow.png">
+
+
+                <!-- Model -->
+                <a-asset-item id="t-rex" src="models/7583_2k.glb"></a-asset-item>
+            </a-assets>
+
+            <!-- Ground -->
+            <!-- <a-plane color="#CCC" scale="20 20 1" rotation="-90 0 0"></a-plane> -->
+
+            <!-- <a-entity gltf-model="#t-rex"
+                    position="0 0 -5"
+                    scale="1 1 1"
+                    rotation="0 90 0">
+                    <a-image src="#shadow"
+                        rotation="90 90 0"
+                        position="0.2 0.01 0"
+                        scale="5 10 1"
+                        opacity="0.5"></a-image>
+            </a-entity> -->
+        </a-scene>
+    </body>
+</html>
